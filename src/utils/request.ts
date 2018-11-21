@@ -4,12 +4,12 @@ import { baseUrl, noConsole } from '../config/index'
 const request_data = {}
 
 interface Opts {
-  method: string;
+  [ method : string ] : any;
   data: any;
-  url?: string;
+  url: string;
 }
 
-export default (options: Opts = { method: 'GET', data: {} }) => {
+export default (options: Opts = { method: 'GET', data: {}, url: '' }) => {
   if (!noConsole) {
     console.log(`${new Date().toLocaleString()}【 M=${options.url} 】P=${JSON.stringify(options.data)}`)
   }
